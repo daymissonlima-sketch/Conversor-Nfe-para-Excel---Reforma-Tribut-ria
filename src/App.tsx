@@ -15,7 +15,10 @@ export default function App() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 font-sans antialiased text-slate-800">
+    <div 
+      className="min-h-screen flex flex-col bg-slate-50 font-sans antialiased text-slate-800"
+      style={{ zoom: '80%' }}
+    >
       
       {/* 1. Corporate Header (Rodateto) */}
       <Header />
@@ -28,10 +31,7 @@ export default function App() {
           <aside className="w-full md:w-64 bg-[#04243b] text-slate-200 border-r border-[#e4b35e]/20 flex flex-col shrink-0 animate-fadeIn">
             
             {/* Header with three-bar icon inside the menu */}
-            <div className="p-4 border-b border-[#e4b35e]/15 flex items-center justify-between">
-              <span className="text-[11px] font-bold text-[#e4b35e] tracking-widest uppercase font-mono">
-                SISTEMA
-              </span>
+            <div className="p-4 border-b border-[#e4b35e]/15 flex items-center justify-start">
               <button 
                 onClick={() => setIsSidebarVisible(false)}
                 className="p-1.5 rounded-lg hover:bg-[#031d30] text-slate-300 transition-colors cursor-pointer"

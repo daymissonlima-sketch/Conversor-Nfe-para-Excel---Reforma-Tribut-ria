@@ -343,16 +343,6 @@ export function DebtLevantamento() {
     return [];
   });
 
-  // State for visual zoom level of the tool (80% default means 20% reduction)
-  const [zoomLevel, setZoomLevel] = useState<number>(() => {
-    const saved = localStorage.getItem('debt_tool_zoom');
-    return saved ? Number(saved) : 80;
-  });
-
-  useEffect(() => {
-    localStorage.setItem('debt_tool_zoom', String(zoomLevel));
-  }, [zoomLevel]);
-
   // Synchronize to localStorage
   useEffect(() => {
     localStorage.setItem('debt_client_info', JSON.stringify(clientInfo));
@@ -1297,37 +1287,11 @@ export function DebtLevantamento() {
       onDragOver={handleGlobalDragOver}
       onDragLeave={handleGlobalDragLeave}
       onDrop={handleGlobalDrop}
-      className="space-y-6 min-h-[600px] relative max-w-5xl mx-auto w-full px-2 sm:px-4 transition-all duration-300 origin-top"
-      style={{ zoom: `${zoomLevel}%` }}
+      className="space-y-6 min-h-[600px] relative max-w-5xl mx-auto w-full px-2 sm:px-4"
     >
       
-      {/* Top action header bar - With Action Panel Header and Zoom controls */}
-      <div className="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-slate-100 pb-2.5">
-          <span className="text-[11px] font-bold text-[#04243b] uppercase tracking-wider flex items-center gap-1.5">
-            <Sliders className="h-4 w-4 text-[#e4b35e]" /> Painel de Ações do Levantamento
-          </span>
-          {/* Zoom Selector */}
-          <div className="flex items-center space-x-2 text-xs">
-            <span className="text-slate-500 font-medium">Zoom do Sistema:</span>
-            <div className="inline-flex rounded-lg border border-slate-200 bg-slate-50 p-0.5">
-              {[80, 90, 100].map((level) => (
-                <button
-                  key={level}
-                  type="button"
-                  onClick={() => setZoomLevel(level)}
-                  className={`px-2.5 py-1 rounded-md text-[11px] font-bold transition-all cursor-pointer ${
-                    zoomLevel === level
-                      ? 'bg-[#04243b] text-white shadow-sm'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  {level}%
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
+      {/* Top action header bar - All buttons strictly side-by-side on a single line on desktop */}
+      <div className="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200 shadow-sm">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 w-full">
           {/* Configurações Button - Opens System Config table modal */}
           <button
