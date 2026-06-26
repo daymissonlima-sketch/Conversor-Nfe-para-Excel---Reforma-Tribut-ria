@@ -1,0 +1,6 @@
+{
+  "name": "Moreira & Lima Contadores Associados",
+  "description": "Plataforma profissional de auditoria, conversão e conciliação fiscal de Notas Fiscais Eletrônicas (NFe) com suporte completo à Reforma Tributária (IBS e CBS) e relatórios altamente personalizáveis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
