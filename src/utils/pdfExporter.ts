@@ -48,7 +48,7 @@ export function exportDebtsToPDF(
     doc.setTextColor(colorTextMuted.r, colorTextMuted.g, colorTextMuted.b);
     
     // Left footer text
-    doc.text('Moreira & Lima CONTADORES ASSOCIADOS', margin, pageHeight - 10);
+    doc.text('Moreira & Lima Contadores Associados', margin, pageHeight - 10);
     
     // Right footer text (Page X of Y)
     const pageText = `Página ${pageNum} de ${totalPages}`;
@@ -316,7 +316,7 @@ export function exportDebtsToPDF(
   doc.setTextColor(colorTextDark.r, colorTextDark.g, colorTextDark.b);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(8.5);
-  doc.text('Moreira & Lima CONTADORES ASSOCIADOS', margin + 15, currentY + 5);
+  doc.text('Moreira & Lima Contadores Associados', margin + 15, currentY + 5);
   doc.text('Assinatura do Contribuinte / Responsável', pageWidth - margin - 75, currentY + 5, { align: 'left' });
 
   doc.setFont('helvetica', 'normal');

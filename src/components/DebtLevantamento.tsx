@@ -2190,9 +2190,6 @@ export function DebtLevantamento() {
                     <p className="text-sm font-extrabold text-[#04243b]">
                       Analisando & Extraindo Dados...
                     </p>
-                    <p className="text-xs text-slate-500">
-                      A IA está interpretando e organizando as competências para o tributo "{selectedCategory?.title}"
-                    </p>
                   </div>
                   <div className="max-w-xs mx-auto bg-slate-100 h-2 rounded-full overflow-hidden">
                     <div 
@@ -2204,11 +2201,7 @@ export function DebtLevantamento() {
               ) : importStep === 'select-category' ? (
                 /* STEP 1: SELECT CATEGORY FOR DEBT LAUNCH */
                 <div className="space-y-4 animate-fadeIn">
-                  <div className="bg-slate-100/80 p-3.5 rounded-2xl border border-slate-200">
-                    <p className="text-[11px] font-semibold text-slate-600 leading-relaxed">
-                      Selecione abaixo a qual **Tributo / Obrigação** pertencem os débitos que você deseja lançar. Você poderá fazer o upload de planilha, texto ou digitar os dados de forma simplificada.
-                    </p>
-                  </div>
+
 
                   {/* Search Bar */}
                   <div className="relative">
@@ -2376,9 +2369,20 @@ export function DebtLevantamento() {
                     <p className="text-xs font-bold text-[#04243b]">
                       Tabela de Validação de Lançamentos
                     </p>
-                    <p className="text-[10px] text-slate-600 mt-0.5 leading-relaxed">
-                      Verifique os campos preenchidos conforme as informações enviadas. Você pode alterar valores e competências diretamente digitando nas células. Entendendo que está tudo correto, salve e inclua no sistema.
-                    </p>
+                    <div className="mt-2.5 grid grid-cols-1 md:grid-cols-3 gap-2 text-[10px] text-slate-600">
+                      <div className="bg-white/60 p-2.5 rounded-lg border border-slate-200/60 shadow-xs">
+                        <span className="font-extrabold text-[#04243b] block mb-0.5 uppercase tracking-wider text-[9px]">1. Conferência</span>
+                        Verifique os campos preenchidos com base nas informações enviadas.
+                      </div>
+                      <div className="bg-white/60 p-2.5 rounded-lg border border-slate-200/60 shadow-xs">
+                        <span className="font-extrabold text-[#04243b] block mb-0.5 uppercase tracking-wider text-[9px]">2. Ajustes</span>
+                        Se necessário, altere valores e competências diretamente digitando nas células.
+                      </div>
+                      <div className="bg-white/60 p-2.5 rounded-lg border border-[#e4b35e]/30 shadow-xs bg-[#e4b35e]/5">
+                        <span className="font-extrabold text-[#04243b] block mb-0.5 uppercase tracking-wider text-[9px] flex items-center gap-1">3. Conclusão</span>
+                        Estando tudo correto, salve para incluir os débitos definitivamente no sistema.
+                      </div>
+                    </div>
                   </div>
 
                   {/* Client / Contribuinte identification inside validation if extracted */}
